@@ -1,0 +1,12 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    build: ./my-react/build
+    container_name: nginx
+    volumes:
+      - ./my-react/build:/usr/share/nginx/html
+      - ./default.conf:/default.conf
+    ports:
+      - "80:80"
+      - "443:443"
